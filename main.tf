@@ -17,13 +17,13 @@ terraform {
 
 provider "azurerm" {
   features {}
-  skip_provider_registration = true
+  resource_provider_registrations = true
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = "813-d12c9b58-hands-on-with-terraform-on-azure"
-  location = "South Central US"
-}
+# resource "azurerm_resource_group" "rg" {
+#   name     = "813-d12c9b58-hands-on-with-terraform-on-azure"
+#   location = "South Central US"
+# }
 
 module "firstrelease" {
   source               = "app.terraform.io/Test-ro/firstrelease/azurerm"
